@@ -1,4 +1,4 @@
-// script.js
+
 const apiKey = "4c128273085e5d5c45e9b09d48ee43a6"; // Your OpenWeather API key
 
 async function getWeather() {
