@@ -1,12 +1,9 @@
-
-const apiKey = "4c128273085e5d5c45e9b09d48ee43a6"; // Your OpenWeather API key
-
 async function getWeather() {
   const rawCity = document.getElementById("cityInput").value.trim();
   if (!rawCity) return alert("Please enter a city name.");
 
   const city = encodeURIComponent(rawCity);
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  const url = `/weather?city=${city}`;
 
   try {
     const response = await fetch(url);
@@ -37,10 +34,3 @@ async function getWeather() {
     alert("An error occurred while fetching weather data.");
   }
 }
-
-// Optional: handle Enter key press
-document.getElementById("cityInput").addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    getWeather();
-  }
-});
