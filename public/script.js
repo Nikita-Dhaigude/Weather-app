@@ -3,7 +3,8 @@ async function getWeather() {
   if (!rawCity) return alert("Please enter a city name.");
 
   const city = encodeURIComponent(rawCity);
-  const url = `/weather?city=${city}`;
+  const url = `http://localhost:3000/weather?city=${city}`;
+
 
   try {
     const response = await fetch(url);
